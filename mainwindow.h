@@ -5,6 +5,17 @@
 #include <gst/gst.h>
 
 
+/* Structure to contain all our information, so we can pass it to callbacks */
+typedef struct _CustomData {
+  GstElement *pipeline;
+  GstElement *source;
+  GstElement *audioconvert;
+  GstElement *videoconvert;
+  GstElement *audiosink;
+  GstElement *videosink;
+} CustomData;
+
+
 namespace Ui {
   class MainWindow;
 }
@@ -22,10 +33,11 @@ private slots:
 
 private:
   Ui::MainWindow *ui;
-  GstElement *pipeline, *source, *sink;
+  CustomData data;
   GstBus *bus;
   GstMessage *msg;
   GstStateChangeReturn ret;
+  gboolean terminate;
 };
 
 #endif // MAINWINDOW_H
