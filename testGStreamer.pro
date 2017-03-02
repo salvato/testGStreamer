@@ -44,8 +44,8 @@ contains(QMAKE_HOST.arch, "armv7l"):{
     message("Running on Raspberry")
     INCLUDEPATH += /usr/lib/arm-linux-gnueabihf/glib-2.0/include
 }
-contains(QMAKE_HOST.arch, "x86"):{
-    message("Running on x86")
+contains(QMAKE_HOST.arch, "x86_64"):{
+    message("Running on x86_64")
     INCLUDEPATH += /usr/lib/x86_64-linux-gnu/gstreamer-1.0/include
     INCLUDEPATH += /usr/lib/x86_64-linux-gnu/glib-2.0/include
 }
