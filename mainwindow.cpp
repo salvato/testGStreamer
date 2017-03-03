@@ -45,7 +45,11 @@ void
 MainWindow::on_pushButton_clicked() {
     /* Build the pipeline */
 //    QString sURI = QString("https://www.freedesktop.org/software/gstreamer-sdk/data/media/sintel_trailer-480p.webm");
-    QString sURI = QString("file:///home/gabriele/spot/Unime_ti_apre_le_porte.mp4");
+#ifdef Q_PROCESSOR_ARM
+    QString sURI = QString("file:///home/pi/spot/Campionesse.mp4");
+#else
+    QString sURI = QString("file:///home/gabriele/spot/Campionesse.mp4");
+#endif
 //    QString sCommand = QString("playbin uri=");
 
 
